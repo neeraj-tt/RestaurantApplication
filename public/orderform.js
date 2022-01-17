@@ -1,3 +1,7 @@
+// Thanks to Dave McKenney for this file!
+// Minor changes by Neeraj Thottupurath
+
+
 let currentSubtotal = 0;
 let currentTotal = 0;
 let currentFee = 0;
@@ -24,7 +28,7 @@ function submitOrder(){
 		}
 	}
 					
-	req.open("POST", `http://localhost:3000/orders`);
+	req.open("POST", `/orders`);
 	req.setRequestHeader("Content-Type", "application/json");
 	req.send(JSON.stringify(info));
 }
