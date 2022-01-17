@@ -1,0 +1,26 @@
+html
+    head 
+        title Order
+        script
+            include ../../public/client.js
+        if status
+            include ../partials/header
+        else
+            include ../partials/loggedOutHeader
+
+    body 
+        h1 Order ##{order._id}
+        | Placed by #{order.customer}
+        br
+        br
+        | Restaurant Name: #{order.restaurantName}
+        br
+        br
+        | Subtotal: $#{order.subtotal}
+        br
+        | Tax: $#{order.tax}
+        br
+        | Delivery Fee: $#{order.fee}
+        br
+        | Total: $#{order.total}
+

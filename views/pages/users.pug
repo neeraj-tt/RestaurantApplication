@@ -1,0 +1,17 @@
+html
+    head
+        title Users
+        if status
+            include ../partials/header
+        else
+            include ../partials/loggedOutHeader
+
+    div#main
+        br
+        if users.length > 0
+            each user in users
+                if !user.privacy
+                    a(class="user" href="/users/" + user._id)= user.username + "'s profile"
+                    br
+        else
+            p There are currently no users stored in the database.

@@ -1,0 +1,16 @@
+div#header(class="header")
+    style
+        include ../../public/styling.css
+    script
+        include ../../public/client.js
+    a(href="/" class="header-button") Home 
+    |
+    a(href="/users" class="header-button") Users  
+    |
+    a(href="/order" class="header-button") Order  
+    |
+    a(href="/profile" class="header-button") Profile 
+    |
+    a(class="header-button" onclick ="logout()") Logout
+    br
+    

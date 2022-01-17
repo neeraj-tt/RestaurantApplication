@@ -1,0 +1,19 @@
+html
+    head
+        title Register
+        script
+            include ../../public/client.js
+        if status
+            include ../partials/header
+        else
+            include ../partials/loggedOutHeader
+
+    body
+        br
+        div(class='select-box')        
+            input(id="username-input" class="textbox-container" type="text" name="username" placeholder="Enter username: ")
+            br
+            input(id="password-input" class="textbox-container" type="text" name="password" placeholder="Enter password: ")
+            br
+            br
+            button(class="button" onclick ="register()") Register

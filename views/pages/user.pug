@@ -1,0 +1,33 @@
+html
+    head 
+        title #{user.username}
+        script
+            include ../../public/client.js
+        if status
+            include ../partials/header
+        else
+            include ../partials/loggedOutHeader
+
+    br
+    body 
+        h1 #{user.username}'s profile
+        br
+        if user.username == sessionUser
+            h3 Private Mode:
+                br
+                div(class="privacy")          
+                    input(type="radio" id="privacyOn" name="privacy" value="on")
+                    | On
+                    br
+                    input(type="radio" id="privacyOff" name="privacy" value="off" checked="checked")  
+                    label Off
+                    br
+                    button(class="button" onclick ="savePrivacy()") Save
+                    br
+                    br
+        h3 Order History:
+            br
+            each order in orders
+                if order.customer == user.username
+                    a(href="/orders/" + order._id)=order._id
+                    br
