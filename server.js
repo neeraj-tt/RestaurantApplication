@@ -8,7 +8,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 let Users = require("./UserModel");
 let Orders = require("./OrderModel")
 
-mongoose.connect('mongodb://localhost/a4', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://admin:admin@cluster0.pwml9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -245,5 +245,5 @@ function logout(req, res, next) {
 }
 
 // Start server
-app.listen(3000);
-console.log("Listening on port 3000");
+app.listen(process.env.PORT || 3000);
+//console.log("Listening on port 3000");

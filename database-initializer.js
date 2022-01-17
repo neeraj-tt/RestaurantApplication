@@ -13,10 +13,10 @@ let mongo = require('mongodb');
 let MongoClient = mongo.MongoClient;
 let db;
 
-MongoClient.connect("mongodb://localhost:27017/", function(err, client) {
+MongoClient.connect("mongodb+srv://admin:admin@cluster0.pwml9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", function(err, client) {
   if(err) throw err;	
 
-  db = client.db('a4');
+  db = client.db('restaurant');
   
   db.listCollections().toArray(function(err, result){
 	 if(result.length == 0){
