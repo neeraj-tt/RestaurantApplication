@@ -8,7 +8,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 let Users = require("./UserModel");
 let Orders = require("./OrderModel")
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.pwml9.mongodb.net/restaurant?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://admin:<password>@cluster0.pwml9.mongodb.net/restaurant?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -17,7 +17,7 @@ db.once('open', function() {
 });
 
 let mongoStore = new MongoDBStore({
-    uri: 'mongodb+srv://admin:admin@cluster0.pwml9.mongodb.net/restaurant?retryWrites=true&w=majority',
+    uri: 'mongodb+srv://admin:<password>@cluster0.pwml9.mongodb.net/restaurant?retryWrites=true&w=majority',
     collection: 'sessiondata'
 });
 
