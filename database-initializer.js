@@ -13,7 +13,7 @@ let mongo = require('mongodb');
 let MongoClient = mongo.MongoClient;
 let db;
 
-MongoClient.connect("mongodb+srv://admin:admin@cluster0.pwml9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", function(err, client) {
+MongoClient.connect('mongodb+srv://admin:admin@cluster0.pwml9.mongodb.net/restaurant?retryWrites=true&w=majority', function(err, client) {
   if(err) throw err;	
 
   db = client.db('restaurant');
