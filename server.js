@@ -16,6 +16,12 @@ db.once('open', function() {
     console.log("Connected to a4 database.");
 });
 
+let mongoStore = new MongoDBStore({
+    uri: 'mongodb+srv://admin:<password>@cluster0.pwml9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/a4',
+    collection: 'sessiondata'
+});
+
+
 //View engine
 app.set("view engine", "pug");
 
@@ -23,6 +29,7 @@ app.set("view engine", "pug");
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use(express.json());
+app.use(session({secret: "secret here", store: mongoStore}));
 
 app.get("/", sendIndex);
 app.get("/users", sendUsers);
