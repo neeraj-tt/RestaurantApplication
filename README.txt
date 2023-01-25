@@ -5,4 +5,4 @@ Purpose: To provide a system where users can login and place
 To initialize database:
 	node database-initializer.js
 
-Visit at https://secret-reaches-02174.herokuapp.com/
+Visit at secret-reaches-02174.herokuapp.com/
